@@ -1,0 +1,47 @@
+- Endpoint (Phone and Laptop) Management
+    - Why you should care / threats 
+        - If you don't keep your devices up to date/patched, they will be exploited (probably not in a targeted way, probably to become part of a bot net), and you will need to report the incident to your customers 
+        - If your customers are targeted, and you're the weaker link, their data will be stolen from you 
+    - What you should do (in order of importance)
+        - You an endpoint manager that allows you to automatically enforce polices on your devices (consider something like, "all devices must be up to date in 24hrs," or "you need to be on at least <version> to access the corporate VPN"). You need this for any type of device that will access corporate data, probably laptops and mobile phones 
+        - Control what apps/software can be visited from your endpoints (Jamf Self Service is a good way to distribute software for your co) 
+        - Control which chrome extensions can be installed, so many freaking malicious ones 
+        - If you'll have customer data on laptops, encrypt disk 
+- Network
+    - Why you should care / threats
+        - You probably don't have a network :) 
+    - What you should do (in order of importance)
+        - Require authentication from your IdP for access to all applications, data, and services
+- SaaS
+    - Why you should care / threat
+        - Someone else is managing access to this data for you, you take on the third party risk.
+        - If you don't use your own IdP, you're opening up another layer for the easiest/most likely attack vector: credential loss from e.g. phishing 
+        - What corporations previously protected with use of a VPN is now protected by strong authentication with your SaaS providers 
+    - What you should do (in order of importance)
+        - SSO/SAML: Configure all services to login with your IdP 
+        - Lock down enterprise account (ie minimize permissions to the account that is your github administer, this should probably be different than the CEOs creds, strong password, etc)
+        - Zoom: Require meeting with passwords, try not to get zoom bombed
+- Identity Management
+    - Why you should care / threat
+        - This is my bar the most likely attack you'll fall victim to
+    - What you should do (in order of importance)
+        - 2FA
+        - One set of creds for everything: Don't make your employees have a username/password for different services. It will be too hard to manage and you'll mess it up. 
+- Software Development
+    - Why you should care / threat
+        - Stability/Availability of your products
+        - Protect your intellectual property 
+        - Supply chain attacks: This is a way for attackers to target your customers. 
+    - What you should do (all important)
+        - Code signing
+        - Policies on repos
+        - Use Avatar for machine auth
+            - try to avoid but if you absolutely must share secrets: Thycotic 
+- Data Security 
+    - Why you should care / threat
+        - Could lose your IP, customer data, large and established legal liability
+    - What you should do in order of importance
+        - Have some basic policies to govern use of your most important data / applications
+            - Can customer data go in slack? 
+            - Ingress/Egress
+                - There are no great products on the market for this right now, so you should define policies about what your employees can and cannot do on their machines. 
