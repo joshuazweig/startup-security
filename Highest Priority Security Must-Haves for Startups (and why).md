@@ -45,3 +45,5 @@
             - Can customer data go in slack? 
             - Ingress/Egress
                 - There are no great products on the market for this right now, so you should define policies about what your employees can and cannot do on their machines. 
+
+If you found this content helpful, consider [supporting](https://buy.stripe.com/6oEeV96Ai16c6XK7ss)
